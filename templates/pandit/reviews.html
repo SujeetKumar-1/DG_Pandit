@@ -1,0 +1,26 @@
+{% extends 'pandit/baseDash.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="#" />
+{% endblock %}
+
+
+{% block content %}
+<h1>REVIEWS</h1>
+{% endblock %}
+
+{% block extra %}
+<script>
+    function showMessageAfterDelay() {
+        // Hide the button after submission
+        var button = document.getElementById('submitBtn');
+        button.style.display = 'none';
+
+        // Show message after a delay
+        setTimeout(function() {
+            alert('Submission successful!');
+        }, 3000); // 3000 milliseconds = 3 seconds
+    }
+    
+</script>
+{% endblock %}

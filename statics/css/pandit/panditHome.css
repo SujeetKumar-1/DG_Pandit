@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'Pacifico', cursive;
+    src: url('https://fonts.gstatic.com/s/pacifico/v17/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
+} 
+
+.poster-container{
+    position: relative;
+    width: 100%;
+    height: 45rem;
+    padding: 2rem, 0;
+    overflow-x: hidden;
+}
+
+.poster{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slider{
+    flex: 0 0 auto;
+    margin-right: 30px;
+    position: relative;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 60%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+}
+
+.slide-content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 200;
+    background: linear-gradient(to right, #030b17 80%, #0c111b00);
+    color: #fff;
+}
+
+.slide-content .slide-title{
+    padding-left: 50px;
+    font-size: 5rem;
+    font-family: 'Pacifico', cursive;
+    color: #dcf216;
+    text-transform: capitalize;
+    margin-top: 80px;
+}
+
+.slide-content .slide-disc{
+    padding-left: 50px;
+    line-height: 30px;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+
+
+
+.site-content{
+    width: 100%;
+    position: inherit;
+    margin: 20px 0 10px 0;
+}
+
+.greeting{
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 10px 30px 10px;
+}
+
+.greeting h1{
+    font-size: 5rem;
+    text-align: center;
+    color: #fc0a0a;
+    font-family: 'calibri';
+    margin: 50px 0 0 0;
+    transition: all 0.5s ease-out;
+}
+
+.greeting p{
+    font-family: 'calibri';
+    font-size: 2rem;
+    color: #0a0a0a;
+    text-align: center;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 20%;
+}
+
+
+.report, .services{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+}
+
+.report{
+    margin-bottom: 20px;
+}
+
+.details{
+    width: 50%;
+    height: 100%;
+    
+}
+
+.report .notification{
+    width: 50%;
+    height: 100%;
+    background-color: #f6f0f0;
+}
+.notification h2{
+    font-size: 3.5rem;
+    font-family: "calibri";
+    margin: 10px 0 0 20px;
+    text-decoration: none;
+}
+
+.notification .notice-list{
+    width: 100%;
+    height: 100%;
+    margin: 10px 30px 0 30px;
+}
+
+.notice-list .list{
+    list-style-type: none;
+    display: flex;
+    width: 95%;
+    height: 50px;
+    background-color: rgb(206, 208, 209);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.notice-list .list h4{
+    width: 80%;
+}
+
+.list h4 a{
+    font-size: 2rem;
+    font-weight: 550;
+    text-decoration: none;
+}
+
+.list h4 a:hover{
+    color: rgb(255, 0, 0);
+}
+
+.notice-list .list p{
+    font-size: 1.8rem;
+    width: 30%;
+    margin: 0 0 0 50%;
+}
+
+.report .booking{
+    width: 50%;
+    height: 100%;
+    background-color: #f6f0f0;
+    border-left: 2px solid #f70909;
+}
+
+.booking h2{
+    font-size: 3.5rem;
+    font-family: "calibri";
+    margin: 10px 0 0 20px;
+    text-decoration: none;
+    transition: all 0.6s ease-in;
+}
+
+.booking .booking-list{
+    width: 100%;
+    height: 100%;
+    margin: 10px 30px 0 30px;
+}
+
+.booking-list .new-booking{
+    list-style-type: none;
+    display: flex;
+    background-color: rgb(206, 208, 209);
+    width: 95%;
+    height: 80px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.new-booking .Ptitle{
+    width: 80%;
+}
+
+.new-booking .Ptitle a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 550;
+    transition: all 0.3s ease-in;
+}
+
+.new-booking .Ptitle a:hover{
+    color: #fc0a0a;
+}
+
+.new-booking .Ptitle .client{
+    display: flex;
+    margin: 10px 20px 0  10px;
+}
+
+.Ptitle .client p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+.new-booking li{
+    width: 30%;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.pandit-services{
+    width: 100%;
+    height: 550px;
+    margin-top: 70px;
+    border-bottom: 2px solid #6a6868;
+    margin-bottom: 50px;
+}
+
+.pandit-services h1{
+    font-size: 4rem;
+    font-family: 'calibri';
+    text-align: center;
+    color: #f70909;
+    margin-bottom: 30px;
+    transition: all 0.6s ease-in;
+}
+
+.pandit-services .service-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px 0;
+    border-top: 2px solid #6a6868;
+}
+
+.service-container .your-service{
+    width: 250px;
+    height: 350px;
+    padding: 5px;
+    margin: 30px 10px 0 10px;
+}
+
+.your-service img{
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    border: 3px solid #6808ee;
+}
+
+.your-service img:hover{
+    transform: scale(1.03);
+}
+
+.your-service .service-details{
+    width: 100%;
+    height: 30%;
+    margin: 10px 0 0 10px;
+}
+
+.service-details h3{
+    font-size: 2rem;
+    font-family: 'calibri';
+    font-weight: 550;
+    color: #ee0808;
+}
+
+.service-details h3 a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.service-details h3 a:hover{
+    color: #ee0808;
+    font-weight: 800;
+}
+
+.service-details p{
+    font-size: 1.3rem;
+    color: #312f2f;
+    text-align: left;
+    margin: 10px 0 0 10px;
+}
+
+.service-details h4{
+    font-size: 1.5rem;
+    margin: 10px 0 0 10px;
+}

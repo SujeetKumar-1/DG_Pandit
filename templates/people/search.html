@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <section class="container">
+        {% if query %}
+        <div>
+            <div>
+                {% for data in result %}
+                <h4>{{data.name}}</h4>
+                <p>{{data.skill}}</p>
+                <p>{{data.price}}</p>
+                {%endfor%}
+            </div>
+        </div>
+        {%endif%}
+    </section>
+{% endblock %}

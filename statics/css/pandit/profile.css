@@ -1,0 +1,160 @@
+.main-content{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content #ptitle{
+    font-size: 2.5rem;
+    font-family: 'Vardana', 'Geneva', 'sans-serif';
+    color: #f00caf;
+    margin: 20px;
+    padding: 5px;
+}
+
+.main-content hr{
+    width: 100%;
+    border: 1.5px solid #333;
+    margin: 0 0 20px 20px;
+}
+
+.main-content .wrapper-container{
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+}
+
+.wrapper-container .form-container .form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form .form-head{
+    width: 98%;
+    height: 30px;
+    background-color: blue;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    margin-bottom: 20px;
+}
+
+.form .form-head h3{
+    color: #fff;
+    margin-left: 15px;
+    font-weight: 700;
+}
+
+.form .personal, .form .contact, .form .work-exp{
+    width: 98%;
+    margin-bottom: 20px;
+}
+
+.form .personal .row, .form .contact .row, .form .work-exp .row{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.form .personal .row .col-01, .form .personal .row .col-02,
+.form .contact .row .col-01, .form .contact .row .col-02,
+.form .work-exp .row .col-01, .form .work-exp .row .col-02{
+    margin: 20px 0 0 10px;
+}
+
+.form .personal .row .col-01, .form .contact .row .col-01, .form .work-exp .row .col-01{
+    width: 30%;
+}
+
+.form .personal .row .col-02, .form .contact .row .col-02, .form .work-exp .row .col-02{
+    width: 60%;
+}
+
+.form .personal .row .col-01 label, .form .contact .row .col-01 label, .form .work-exp .row .col-01 label{
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #444141;
+}
+
+.form .personal .row .col-02 label{
+    font-size: 1rem;
+    color: #444141;
+    margin-right: 30px;
+}
+
+.form .personal .row .col-02 input, .form .contact .row .col-02 input, .form .work-exp .row .col-02 input{
+    width: 95%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #a3a3a3;
+    outline: none;
+    padding: 5px 10px ;
+    font-size: 1rem;
+}
+
+.form .personal .row .photos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form .personal .row .photos a{
+    text-decoration: none;
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}
+
+.form .personal .row .col-02 input[type="file"]{
+    border: none;
+    margin-left: -10px;
+    color: #444141;
+}
+.form .personal .row .col-02 #red{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.form .contact .row .col-02 textarea,
+.form .work-exp .row .col-02 textarea{
+    width: 95%;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form .sub-btn{
+    width: 90%;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0 30px 0;
+}
+
+.form .sub-btn button{
+    margin-right: 20px;
+    width: 120px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(12, 12, 242);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    box-shadow: 2px 2px #f520b2;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.form .sub-btn button:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background-color: #8b0303;
+}

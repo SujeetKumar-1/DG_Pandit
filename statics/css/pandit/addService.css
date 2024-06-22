@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(207, 208, 208);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.main .form{
+    width: 100%;
+    height: 100%;
+}
+
+.main .form .title{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    border-radius: 10px 10px 0 0;
+}
+
+.main .form .title h3{
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin: 0 20px 0 20px;
+}
+
+.main .form .title #close-btn{
+    color: rgb(145, 144, 144);
+    cursor: pointer;
+}
+
+.main .form .title #close-btn:hover{
+    transform: scale(1.2);
+    color: #e16666;
+}
+.main .form .section{
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px;
+}
+
+.main .form .section .service{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form .section .service label{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.form .section .service input{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid beige;
+}
+
+.form .section .service input:focus,
+.form .section .service textarea:focus{
+    outline: none;
+}
+
+.form .section .service textarea{
+    width: 50%;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px 5px;
+    border: 1px solid beige;
+}
+
+.form .section .service .s_pic{
+    width: 50%;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+.form .section .service .s_pic input{
+   width: 100%;
+   border: none;
+}
+
+.form .section .service .s_pic p{
+    font-size: 13px;
+    color: rgb(93, 93, 93);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form .section .add-btn{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form .section .add-btn button{
+    width: 120px;
+    height: 45px;
+    font-size: 1.6rem;
+    background-color: blue;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 0#e16666;
+    cursor: pointer;
+}
+
+

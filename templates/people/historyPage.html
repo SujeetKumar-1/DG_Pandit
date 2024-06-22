@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+.event-main-container{
+    width: 100%;
+    max-height: 500px;
+    padding: 5px 5px;
+    margin: 40px 0 35px 35px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-main-container .container-event{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-main-container .container-event .container-event-col01{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.event-main-container .container-event .container-event-col01 .title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0909f1 ;
+    border-radius: 10px 10px 0 0;
+}
+
+.event-main-container .container-event .container-event-col01 .title h3{
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 10px;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+.event-main-container .container-event .container-event-col01 .title #minimize{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    color: #999898;
+    cursor: pointer;
+}
+
+.event-main-container .container-event .container-event-col01 .event-wrapper{
+    width: 100%;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: content-box;
+}
+
+.event-main-container .container-event .container-event-col01 .event-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list{
+    width: 97%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list .event-details{
+    width: 80%;
+    margin: 10px 0 10px 0;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list .event-details h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #080846;
+    cursor: pointer;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list .event-details p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #616165;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list .event-date{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.event-main-container .container-event .container-event-col01 .event-list .event-date p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color: #080846;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 60%;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+  }
+
+  .modal .modal-content::-webkit-scrollbar{
+    display: none;
+  }
+
+  .modal .modal-content .closebtn{
+    width: 60%;
+    height: 30px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+  }
+
+  .modal .modal-content .closebtn .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .modal .modal-content .close:hover,
+  .modal .modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal .modal-content .content{
+    width: 100%;
+    margin: 20px 0 0 20px;
+  }
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Upcoming Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for conf in confirm %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <!-- Add class 'openModel' and data attributes to store event details -->
+                        <h4 class="openModel" data-ritual="{{ conf.ritual }}" data-destination="{{ conf.destination }}" data-date="{{ conf.ritual_date }}">{{ conf.ritual }}</h4>
+                        <p>{{ conf.destination }}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{ conf.ritual_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Pending Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for pen in pendings %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <h4 class="openModel" data-ritual="{{ pen.ritual }}" data-destination="{{ pen.destination }}" data-date="{{ pen.ritual_date }}">{{ pen.ritual_name }}</h4>
+                        <p>{{pen.destination}}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{pen.ritual_date}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Previous Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for pas in past %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <h4 class="openModel">{{pas.ritual_date}}</h4>
+                        <p>{{pas.destination}}p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{pas.ritual_date}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="closebtn">
+            <h4 class="close">&times;</h4>
+        </div>
+        <div class="content">
+            <h2 id="eventRitual"></h2>
+            <p id="eventDestination"></p>
+            <p id="eventDate"></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra %}
+<script>
+    // Get all modal trigger buttons
+    var modalBtns = document.querySelectorAll(".openModel");
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get modal content elements
+    var ritualElement = document.getElementById("eventRitual");
+    var destinationElement = document.getElementById("eventDestination");
+    var dateElement = document.getElementById("eventDate");
+
+    // Get the <span> element that closes the modal
+    var span = document.querySelector(".close");
+
+    // Loop through all modal trigger buttons
+    modalBtns.forEach(function (btn) {
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            // Get event details from data attributes
+            var ritual = btn.getAttribute("data-ritual");
+            var destination = btn.getAttribute("data-destination");
+            var date = btn.getAttribute("data-date");
+
+            // Populate modal content with event details
+            ritualElement.textContent = ritual;
+            destinationElement.textContent = destination;
+            dateElement.textContent = date;
+
+            modal.style.display = "block";
+        }
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+{% endblock %}

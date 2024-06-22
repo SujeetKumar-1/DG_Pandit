@@ -1,0 +1,53 @@
+{% include 'navbar.html' %}
+
+
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now on digital pandit</title>
+    <link rel="stylesheet" href="/statics/css/people/signup.css">
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == "error" %}
+    <div class="alert alert-danger" role="alert">
+        <h1>{{ message }}</h1>
+    </div>
+    {% else %}
+    <div class="alert alert-success" role="alert">
+        <h1>{{ message }}</h1>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <section class="container">
+        <div class="bluebg">
+            <div class="box signup">
+                <!-- <h1>Already have an account ?</h1>
+                <button type="submit" class="btn">Sing in</button> -->
+            </div>
+
+            <div class="box signin">
+                <h1>Don't have an account ?</h1>
+                <a href="{% url 'userSignup' %}" class="btn">Sing up</a>
+            </div>
+        </div>
+
+        <div class="formBox">
+            <div class="signIncontainer">
+                <form class="signInform" method="POST" id="Sin">
+                    {% csrf_token %}
+                    <h1>Sign in</h1>
+                    <input type="email" name="Email" placeholder="Enter username/email" required />
+                    <input type="password" name="pass1" placeholder="Enter password" required />
+                    <input type="submit" value="Login" class="btn">
+                    <a href="#" class="forgot">Forgot Password</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href="/statics/css/services.css" />
+<link rel="stylesheet" href="/statics/css/base.css" />
+{% endblock %}
+{% block SlideImg %}
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="/statics/Image/6.jpeg" style="width:100%">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="/statics/Image/2.png" style="width:100%">
+      
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="/statics/Image/3.jpg" style="width:100%">
+      
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+{% endblock %}
+
+
+
+
+{% block body %}
+
+   <center><h1 class="blink"  aria-setsize="50px" class="service" >DIFFERENT TYPE OF SERVICES</h1></center>
+  <section>
+  <div class="gallery">
+
+    <center><img src="/statics/Image/1.jpg" alt="Cinque Terre" width="600" height="400" class="border"></center>
+  </a>
+ 
+  <div class="Havan/Yagna" class="blink">
+    <button onclick="myFunction()" class="dropbtn">Havan</button>
+    <div id="myDropdown" class="dropdown-content">
+      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+  
+      <a href="{% url 'services' %}">Rudra Havan</a>
+      <a href="{% url 'services' %}">Maha Mrityunjay jap</a>
+      <a href="{% url 'services' %}">Navratri Havan</a>
+      <a href="{% url 'services' %}">Ganesh Havan</a>  
+    </div>
+  </div>
+  
+  <script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+  </script>
+  
+</div>
+
+<div class="gallery">
+ 
+    <center><img src="/statics/Image/1.png" alt="Forest" width="600" height="400"></center>
+  </a>
+  <div class="puran katha">
+    <button onclick="myFunction2()" class="dropbtn">Puran katha</button>
+    <div id="myDropdown2" class="dropdown-content">
+      <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction()">
+      <a href="{% url 'services' %}">Bhagwat Katha </a>
+      <a href="{% url 'services' %}">Shiv MahaPuran</a>
+      <a href="{% url 'services' %}">Ram Katha</a>
+      <a href="{% url 'services' %}">SundarKandh</a>  
+    </div>
+  </div>
+  
+  <script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+  }
+  
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput2");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown2");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+  </script>
+  
+</div>
+
+
+<div class="gallery">
+  <a target="_blank" href="/statics/Image/3.jpg">
+   <img src="/statics/Image/3.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  
+<div class="Destination Function" class="blink">
+  <button onclick="myFunction3()" class="dropbtn">Destination Function</button>
+  <div id="myDropdown3" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput3" onkeyup="filterFunction()">
+    <a href="{% url 'services' %}">Destination Wedding</a>
+    <a href="{% url 'services' %}">Destination Puja</a>
+    <a href="{% url 'services' %}">VehiclePuja</a>  
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction3() {
+  document.getElementById("myDropdown3").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown3");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</div>
+
+
+
+<div class="gallery">
+
+    <img src="/statics/Image/4.png" alt="Mountains" width="600" height="400">
+  </a>
+<div class="Online Worship">
+  <button onclick="myFunction4()" class="dropbtn">Online Worship</button>
+  <div id="myDropdown4" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput4" onkeyup="filterFunction()">
+    <a href="{% url 'services' %}">Live Arti</a>
+    <a href="{% url 'services' %}">Live Puja</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction4() {
+  document.getElementById("myDropdown4").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput4");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown4");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</div>
+
+
+<div class="gallery" class="blink">
+
+  <img src="/statics/Image/ram.jpg" alt="Mountains" width="600" height="400">
+</a>
+<div class="Home Rituals">
+  <button onclick="myFunction5()" class="dropbtn">Home Rituals</button>
+  <div id="myDropdown5" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput5" onkeyup="filterFunction()">
+    <a href="{% url 'services' %}">NamKaran Puja </a>
+    <a href="{% url 'services' %}">Navratari Durga Puja</a>
+    <a href="{% url 'services' %}">Dhanteras Puja</a>
+    <a href="{% url 'services' %}">Ganesh Chaturthi</a>  
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction5() {
+  document.getElementById("myDropdown5").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput5");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown5");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</div>
+<div class="gallery">
+ 
+  <center><img src="/statics/Image/1.png" alt="Forest" width="600" height="400"></center>
+</a>
+<div class="puran katha">
+  <button onclick="myFunction6()" class="dropbtn">FESTIVAL PUJA</button>
+  <div id="myDropdown6" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction()">
+    <a href="{% url 'services' %}">Laxmi puja </a>
+    <a href="{% url 'services' %}">Vrat puja </a>
+    <a href="{% url 'services' %}">Ganesh Pratisthapan</a>
+    <a href="{% url 'services' %}">Durga puja</a>  
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction6() {
+  document.getElementById("myDropdown6").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput6");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown6");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</div>
+  </section>
+{% endblock %}

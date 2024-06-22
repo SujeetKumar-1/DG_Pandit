@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dashboard | Digital Pandit</title>
+    <link rel="stylesheet" href="/statics/css/pandit/base.css">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="site-header">
+        <header class="header">
+            <div class="header-element">
+                <div class="left-element">
+                    <div class="site-logo">
+                        <h1 class="text-logo">DIGITAL <span>PANDIT</span></h1>
+                    </div>
+                </div>
+
+                <div class="user-wel">
+                    <h3>Welcome:</h3>
+                    <h2>{{user_name}} Ji</h2>
+                </div>
+                <div class="right-element">
+                    <div class="notification-icon">
+                        <ion-icon name="notifications-outline" id="notice"></ion-icon>
+                    </div>
+                    <div class="profile-pic">
+                        <img src="{{pro_img.url}}" id="pic" />
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-elements">
+                <div class="sidebar-top">
+                    <ul class="sidebar-list">
+                        <li><a href="{% url 'panditdashboard'%}"><ion-icon id="icon" name="grid-outline"></ion-icon>
+                                <span id="list">Dashboard</span></a></li>
+                        <li><a href="{% url 'panditProfile'%}"><ion-icon id="icon" name="person-outline"></ion-icon>
+                                <span id="list">Profile</span></a></li>
+                        <li><a href="{% url 'servicePage'%}"><ion-icon id="icon" name="business-outline"></ion-icon>
+                                <span id="list">Service</span></a></li>
+                        <li><a href="{% url 'events' %}"><ion-icon id="icon" name="calendar-outline"></ion-icon>
+                                <span id="list">Events</span></a></li>
+                        <li><a href="{% url 'notification'%}"><ion-icon id="icon" name="chatbubbles-outline"></ion-icon>
+                                <span id="list">Message</span></a></li>
+                        <li><a href="{% url 'review'%}"><ion-icon id="icon" name="star-outline"></ion-icon>
+                                <span id="list">Review</span></a></li>
+                        <li><a href="{% url 'resetpassword'%}"><ion-icon id="icon" name="key-outline"></ion-icon>
+                                <span id="list">Reset Password</span></a></li>
+                        <li><a href="{% url 'Panditsetting'%}"><ion-icon id="icon" name="settings-outline"></ion-icon>
+                                <span id="list">Settings</span></a></li>
+                        <!-- Add more sidebar links as needed -->
+                    </ul>
+                </div>
+                <dic class="sidebar-footer">
+                    <ul class="sidebar-list">
+                        <li><a href="{% url 'help' %}"><ion-icon id="icon" name="help-circle-outline"></ion-icon><span
+                                    id="list">Help</span></a></li>
+                        <li><a href="{% url 'panditlogout' %}"><ion-icon id="icon"
+                                    name="log-out-outline"></ion-icon><span id="list">Logout</span></a></li>
+                    </ul>
+                </dic>
+            </div>
+            <div class="slide-list">
+                <ion-icon name="chevron-back-outline" id="swipe-btn" onclick="toggleSidebar()"></ion-icon>
+            </div>
+        </aside>
+
+        <!-- Dashboard main content start here -->
+        <div class="main-content">
+            {% block content %} {% endblock %}
+        </div>
+
+    </div>
+
+    {% block extra %} {% endblock %}
+
+    <!-- Footer of the website -->
+    <footer class="footer">
+        <div class="footer-elements">
+            <h3> <a href="#">Digital Pandit </a>| All Right Reserved</h3>
+        </div>
+    </footer>
+
+    <!-- Javascript code for icons -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/statics/jsscript/panditBase.js"></script>
+</body>
+
+</html>

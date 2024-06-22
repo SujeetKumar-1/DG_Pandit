@@ -1,0 +1,91 @@
+{% extends 'pandit/baseDash.html' %}
+{% block head %}
+<title>Profile Dashboard | Digital Pandit</title>
+<link rel="stylesheet" href="/statics/css/pandit/dashboard.css">
+{% endblock %}
+
+<!-- Dashboard main content start here -->
+{% block content %}
+
+<h1 id="title">Dashboard</h1><hr>
+
+<section class="first-container">
+    <div class="profile-tab">
+        <div class="title2">
+            <h2>PROFILE</h2>
+            <a href="{%url 'panditProfile' %}">Manage Profile</a>
+        </div>
+        <div class="details">
+            <h3>Name &emsp; &ensp; &emsp; : </h3>
+            <p>{{user_name}}</p>
+        </div>
+        <div class="details">
+            <h3>Phone No. &ensp; &nbsp; : </h3>
+            <p>{{phone}}</p>
+        </div>
+        <div class="details">
+            <h3>Gmail ID &emsp; &emsp;: </h3>
+            <p>{{gmail}}</p>
+        </div>
+        <div class="details">
+            <h3>User Type &ensp; &ensp; : </h3>
+            <p>{{user_type}}</p>
+        </div>
+        <div class="details">
+            <h3>Active Status : </h3>
+            <p>{{active}}</p>
+        </div>
+    </div>
+
+    <div class="service-tab">
+        <div class="title2">
+            <h2>POPULAR SERVICES</h2>
+            <a href="{%url 'servicePage' %}">Manage Services</a>
+        </div>
+        <div class="service-scroll">
+            {% for service in allservice %}
+            <div class="Services-details">
+                <img src="{{service.service_img.url}}"/>
+                <div class="details">
+                    <h3>{{service.title}}</h3>
+                    <p>{{service.description|slice:"0:79"}}...</p>
+                    <p><span>Fee:</span> {{service.fee}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="first-container">
+    <div class="profile-tab event">
+        <div class="title2">
+            <h2>EVENTS</h2>
+            <a href="#">View All</a>
+        </div>
+        <div class="details">
+            <h3><a href="#">Satya Narayan Katha</a></h3>
+            <p>13/03/2024</p>
+        </div>
+        <div class="details">
+            <h3><a href="#">Grih Pravesh Poojan</a></h3>
+            <p>15/03/2024</p>
+        </div>
+    </div>
+    <div class="service-tab">
+        <div class="title2">
+            <h2>NOTIFICATION</h2>
+            <a href="{% url 'notification'%}">View All</a>
+        </div>
+        <div class="Services-details notification">
+            <ul class="details">
+                <li><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, totam. Unde,
+                        veritatis nisi. Illum blanditiis eum inventore,</a></li>
+                <li><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, totam. Unde,
+                        veritatis nisi. Illum blanditiis eum inventore,</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

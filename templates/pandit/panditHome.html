@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Digital Pandit Ji Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="/statics/css/index.css">
+    <link rel="stylesheet" href="/statics/css/pandit/panditHome.css" />
+</head>
+
+<body>
+    <!-- Site Header for desktop view start here-->
+    <header class="site-header">
+        <div class="header-link social">
+            <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+        </div>
+        <div class="moving-element">
+            <p class="moving-text">
+                Digital Pandit, Your Personal Pandit. Talk With Your Pandit...
+            </p>
+        </div>
+        <div class="header-link contact">
+            <ul class="contact-link">
+                <li><ion-icon name="call-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">+91 9195000000</a></li>
+                <li><ion-icon name="mail-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">info@dgpanditji.com</a></li>
+            </ul>
+            <a href="{% url 'panditSignup' %}" class="login-btn" id="loginpage">Login</a>
+        </div>
+    </header>
+    <!-- Site Header for desktop view End here-->
+
+    <!-- Resposive Site Header start here-->
+    <header class="desktop-navbar active">
+        <a href="/home"><img src="/statics/Image/logo.png" class="site-logo" alt="Site Logo" /></a>
+        <navbar class="navbar">
+            <ul class="navmenu">
+                <li><a href="#" class="link-list">Home</a></li>
+                <li><a href="#" class="link-list">Contact us</a></li>
+                <li class="sub-list"><a href="#" class="link-list">Services</a></li>
+                <li class="sub-list"><a href="#" class="link-list">Notifications</a></li>
+                <li><a href="#" class="link-list">Profile</a></li>
+            </ul>
+        </navbar>
+        <div class="mobile-view-icon">
+            <ion-icon name="menu-outline" class="icon"></ion-icon>
+            <ion-icon name="close-outline" class="icon"></ion-icon>
+        </div>
+    </header>
+    <!-- Responsive Site Header End here-->
+
+    <!-- site header carousel image code start from here -->
+    <section class="poster-container">
+        <div class="poster">
+            <div class="slide-content">
+                <h1 class="slide-title">Join us as pandit ji</h1>
+                <p class="slide-disc">Become a Digital Pandit and earn more Money</p>
+            </div>
+
+            <div class="slider">
+                <img src="/statics/Image/panditji.jpg" />
+            </div>
+        </div>
+    </section>
+    
+    <!-- Site landing page content start here... -->
+
+    <div id="main" class="site-content">
+        <div class="greeting">
+            <h1>Nice To see you here</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptate. 
+                Dignissimos ex iure est cumque recusandae voluptate voluptates, consequat</p>
+        </div>
+
+        <section class="report">
+            <div class="notification details">
+                <h2>Latest Notification</h2>
+                <div class="notice-list">
+                    <ol class="list">
+                        <h4><a href="#">Notification title</a></h4>
+                        <p>just now</p>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="booking details">
+                <h2>Booking Details</h2>
+                <div class="booking-list">
+                    <ol class="new-booking">
+                        <li class="Ptitle">
+                            <a href="#">Pooja name</a>
+                            <div class="client">
+                                <p>Client Name</p>
+                                <p>+91 98452XXXXX</p>
+                            </div>
+                        </li>
+                        <li>pooja date: 10/12/2023</li>
+                        
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="pandit-services">
+            <h1>Your All Services</h1>
+            <div class="service-container">
+                <div class="your-service">
+                    <img src="/statics/Image/ganesh.png" />
+                    <div class="service-details">
+                        <h3><a href="#">Ganapati Pujan</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Consectetur enim minus voluptate</p>
+                        <h4>Rs.5000</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+
+    <!-- Start Footer of the Site -->
+    <footer class="footer">
+        <div class="site-footer">
+            <div class="footer-link">
+                <h1>Quick Link</h1>
+                <ul class="footer-menu">
+                    <li class="menu-link"><a href="#">Contact Us</a></li>
+                    <li class="menu-link"><a href="#">Career</a></li>
+                    <li class="menu-link"><a href="#">Term/condition</a></li>
+                    <li class="menu-link"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h1>Social Link</h1>
+                <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+            </div>
+            <div class="move-top">
+                <ion-icon name="arrow-up-outline" class="top-btn"></ion-icon>
+            </div>
+        </div>
+        <div class="copyright">
+            <h3>@ Copyright 2023 | All Right Reserved <span>❤</span><strong> Digital Pandit</strong></h3>
+        </div>
+    </footer>
+    <!-- JavaScript Start Here -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/statics/jsscript/index.js"></script>
+</body>
+
+</html>

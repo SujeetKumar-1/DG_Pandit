@@ -1,0 +1,69 @@
+{% include 'navbar.html' %}
+
+
+{% block body %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now on digital pandit</title>
+    <link rel="stylesheet" href="/statics/css/people/signup.css">
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == "error" %}
+    <div class="alert alert-danger" role="alert">
+        <h1>{{ message }}</h1>
+    </div>
+    {% else %}
+    <div class="alert alert-success" role="alert">
+        <h1>{{ message }}</h1>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <section class="container">
+        <div class="bluebg">
+            <div class="box signup">
+                <!-- <h1>Already have an account ?</h1>
+                <button type="submit" class="btn">Sing in</button> -->
+            </div>
+
+            <div class="box signin">
+                <h1>Already have an account ?</h1>
+                <a href="{% url 'userLogin' %}" class="btn">Sing in</a>
+            </div>
+        </div>
+
+        <div class="formBox">
+            <div class="signIncontainer">
+                <form class="signupform" method="POST" id="Sup">
+                    {% csrf_token %}
+                    <h1>Sign up</h1>
+                    <input type="text" name="name" placeholder="Enter Your Name" required />
+                    <input type="email" name="email" placeholder="Enter Your Email ID" required />
+                    <input type="password" name="pass1" placeholder="Enter password" required />
+                    <input type="password" name="pass2" placeholder="Confirm password" required />
+                    <input type="submit" name="submit" value="Register" class="btn"></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        const signupBtn = document.querySelector('.signup');
+        const signinBtn = document.querySelector('.signin');
+        const formBox = document.querySelector('.formBox');
+        const body = document.querySelector('body');
+        signinBtn.onclick = function () {
+            formBox.classList.add('active')
+            body.classList.add('active')
+        }
+
+        signupBtn.onclick = function () {
+            formBox.classList.remove('active')
+            body.classList.remove('active')
+        }
+    </script> -->
+{% endblock %}

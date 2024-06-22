@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: aqua;
+}
+
+body.active{
+    background-color: #0b0c0d;
+    transition: .5s ease-out;
+}
+
+.alert{
+    width: 25%;
+    height: 5rem;
+    padding: 5px;
+    margin: 0 0 0 10px;
+    display: block;
+    position: absolute;
+    margin: 0 0 0 40%;
+ }
+
+ .alert h1{
+    font-size: 2rem;
+    text-align: center;
+    columns: #fff;;
+    background-color: #69adf1;
+ }
+
+.container{
+    width: 80%;
+    height: 90vh;
+    margin: 5% 10%;
+    background-color: #2397df;
+    position: relative;
+    border-radius: 10px;
+}
+
+.bluebg{
+    width: 100%;
+    height: 95%;
+    margin-top: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2397df;
+    box-shadow: 5 15px 65px #0b0c0d;;
+}
+
+.bluebg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bluebg .box h1{
+    columns: #fff;
+    font-size: 1.5rem;
+    padding: 5px 5px;
+    margin-bottom: 1rem;
+}
+
+.bluebg .box .btn{
+    cursor: pointer;
+    padding: 9px 10px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
+
+.formBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90vh;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px #618297;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.formBox.active{
+    left: 50%;
+}
+
+.formBox .signIncontainer, .signUpcontainer{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    transition: 0.5s;
+}
+
+.formBox .signIncontainer{
+    transition-delay: 0.25s;
+}
+
+.formBox.active .signIncontainer{
+    left: -100%;
+}
+
+.formBox .signIncontainer{
+    transition-delay: 0.25s;
+} 
+.formBox .signUpcontainer{
+    left: 100%;
+}
+
+.formBox.active .signUpcontainer{
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+.formBox .signInform, .signupform{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formBox .signInform h1, .signupform h1{
+    font-size: 4rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.formBox .signInform input, .signupform input{
+    width: 100%;
+    height: 5rem;
+    margin-bottom: 30px;
+    padding: 5px;
+    outline: none;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #a39c9c;
+}
+
+.formBox .signInform .btn, .signupform .btn{
+    width: 100px;
+    height: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    background: #351ee3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px #eb23af;
+    cursor: pointer;
+}
+
+.formBox .signUpcontainer .btn{
+    background: #f20707;
+}
+
+.formBox .signInform .btn:hover, .signupform .btn:hover{
+    background: #000;
+    transition: .5s ease;
+}
+
+.formBox .signInform .forgot{
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.formBox .signInform .forgot:hover{
+    color: #df2330;
+}
+
+@media (max-width:35em){
+    .bluebg{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bluebg .box h1{
+        width: 200px;
+        align-items: center;
+    }
+
+    .bluebg .signup{
+       margin: -50px 0 80% 0;
+    }
+
+    .bluebg .signin{
+        margin-bottom: 0;
+    }
+    .formBox{
+        width: 100%;
+        height: 70%;
+        left: 0;
+        top: 0;
+    }
+
+    .formBox.active{
+        top: 20%;
+        left: 0;
+        height: 80%;
+    }
+}

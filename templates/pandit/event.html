@@ -1,0 +1,180 @@
+{% extends 'pandit/baseDash.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/statics/css/pandit/event.css" />
+{% endblock %}
+
+
+{% block content %}
+<h1>EVENT</h1>
+<!-- <p style="margin-left: 20px;">Content for this page:
+<ol style="margin-left: 50px;">
+    <li>Upcomming Event/Confirmed Booking</li>
+    <li>Calender: if booked highlight as red/if available highlight as green</li>
+    <li>Booking Request</li>
+    <li>Past Booking</li>
+</ol>
+</p> -->
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Upcoming Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for conf in confirm %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <!-- Add class 'openModel' and data attributes to store event details -->
+                        <h4 class="openModel" data-ritual="{{ conf.ritual }}" data-destination="{{ conf.destination }}"
+                            data-date="{{ conf.ritual_date }}">{{ conf.ritual }}</h4>
+                        <p>{{ conf.destination }}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{ conf.ritual_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Pending Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for pen in pendings %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <!-- Corrected attribute name: data-clname should be data-name -->
+                        <h4 class="openModel" data-ID="{{pen.id}}" data-ritual="{{ pen.ritual_name }}" data-name="{{ pen.name }}" data-email="{{ pen.email }}"
+                            data-phone="{{ pen.phone }}" data-destination="{{ pen.destination }}" data-date="{{ pen.ritual_date }}" data-time="{{ pen.ritual_time }}">{{ pen.ritual_name }}</h4>
+                        <p>{{ pen.destination }}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{ pen.ritual_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-main-container">
+    <div class="container-event">
+        <div class="container-event-col01">
+            <div class="title">
+                <h3>Previous Events</h3>
+                <ion-icon name="remove-outline" id="minimize"></ion-icon>
+            </div>
+            <div class="event-wrapper">
+                {% for pas in past %}
+                <div class="event-list">
+                    <div class="event-details">
+                        <h4 class="openModel">{{pas.ritual_date}}</h4>
+                        <p>{{pas.destination}}p>
+                    </div>
+                    <div class="event-date">
+                        <p>{{pas.ritual_date}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="closebtn">
+            <h4 class="close">&times;</h4>
+        </div>
+        <div class="content">
+            <h2 id="eventRitual"></h2>
+            <!-- Corrected id names: cleintName should be clientName, cleintPhone should be clientPhone -->
+            <p id="clientName"></p>
+            <p id="clientPhone"></p>
+            <p id="clientEmail"></p>
+            <p id="eventDestination"></p>
+            <p id="eventTime"></p>
+            <p id="eventDate"></p>
+        </div>
+
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-elements">
+                    <input type="number" id="ritual-id" name="pid" value="">
+                    <label for="accept">Accepts Request : </label>
+                    <input type="radio" name="accept" value="yes">yes
+                    <input type="radio" name="accept" value="no">no
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra %}
+<script>
+    var modalBtns = document.querySelectorAll(".openModel");
+    var modal = document.getElementById("myModal");
+
+    // Corrected id names: clNmae should be clName, eventTime should be eventTime
+    var clName = document.getElementById("clientName");
+    var clPhone = document.getElementById("clientPhone");
+    var clEmail = document.getElementById("clientEmail");
+    var ritualElement = document.getElementById("eventRitual");
+    var destinationElement = document.getElementById("eventDestination");
+    var dateElement = document.getElementById("eventDate");
+    var eventTime = document.getElementById("eventTime");
+    var eventID = document.getElementById("ritual-id");
+
+    var span = document.querySelector(".close");
+
+    modalBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            var ritual = btn.getAttribute("data-ritual");
+            var name = btn.getAttribute("data-name");
+            var phone = btn.getAttribute("data-phone");
+            var email = btn.getAttribute("data-email");
+            var destination = btn.getAttribute("data-destination");
+            var date = btn.getAttribute("data-date");
+            var time = btn.getAttribute("data-time");
+            var ritualID = btn.getAttribute("data-ID")
+
+            ritualElement.textContent = ritual;
+            clName.textContent = "Name: " + name;
+            clPhone.textContent = "Phone: " + phone;
+            clEmail.textContent = "Email: " + email;
+            destinationElement.textContent = "Destination: " + destination;
+            dateElement.textContent = "Date: " + date;
+            eventTime.textContent = "Time: " + time;
+            eventID.value = ritualID;
+
+            modal.style.display = "block";
+        }
+    });
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+{% endblock %}

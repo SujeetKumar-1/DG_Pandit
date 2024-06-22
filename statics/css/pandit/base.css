@@ -1,0 +1,346 @@
+* {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* CSS for Site Header */
+.site-header {
+    width: 100%;
+    height: 80px;
+    background-image: url(/statics/Image/bg8.gif);
+    position: fixed;
+    z-index: 2;
+}
+
+
+.site-header .header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+}
+
+.header-element {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.header .header-element .left-element,
+.right-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.left-element .site-logo {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-element .site-logo .text-logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(/statics/Image/fire.gif);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.left-element .site-logo .text-logo span {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-element .user-wel{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin: 7px 0 0 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1.5px 1.5px #b2adad;
+}
+
+.header-element .user-wel h3{
+    font-size: 1.4rem;
+    font-family: cursive;
+    background-image: url(/statics/Image/bg5.jpg);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.header-element .user-wel h2{
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e6e9e2;
+    padding: 5px;
+    border-radius: 5px; -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+  
+  
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #3927d9, 0 0 30px #3927d9, 0 0 40px #3927d9, 0 0 50px #3927d9, 0 0 60px #3927d9, 0 0 70px #3927d9;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ea109e, 0 0 40px #ff4da6, 0 0 50px #ea109e, 0 0 60px #ea109e, 0 0 70px #ea109e, 0 0 80px #ea109e;
+    }
+}
+.header .header-element .right-element {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .header-element .right-element .notification-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121e3;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff8b;
+}
+
+.header .header-element .right-element .notification-icon #notice {
+    width: 25px;
+    height: 25px;
+}
+
+.header .header-element .right-element .notification-icon:hover {
+    background-color: rgba(215, 232, 250, 0.74);
+    transform: scale(1.1);
+}
+
+.header .header-element .right-element .notification-icon #notice:hover {
+    color: #050505;
+    transform: scale(1.2);
+}
+
+.header .header-element .right-element .profile-pic {
+    width: 60px;
+    height: 60px;
+    margin: 10px 10px 5px 0;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.header .header-element .right-element .profile-pic #pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.header .header-element .right-element .profile-pic:hover,
+.header .header-element .right-element .profile-pic #pic:hover {
+    transform: scale(1.1);
+}
+
+/* CSS Start for Sidebar */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    height: fit-content;
+    background-color: #dbd7d7;
+
+}
+
+.main-container .sidebar {
+    width: 22%;
+    background-color: #1b1919;
+    display: flex;
+    justify-content: space-between;
+    margin: 83px 0 3px 0;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.2s ease-out;
+}
+
+
+.sidebar .sidebar-elements{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .sidebar-elements .sidebar-top{
+    display: block;
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list{
+    list-style-type: none;
+    padding: 0;
+    display: inline;
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li,
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li{
+    width: 100%;
+    margin-left: 4px;
+    margin-bottom: 15px;
+    padding: 5px 20px;
+    list-style-type: none;
+}
+
+.sidebar.active{
+    width: 5%;
+    transition: all 0.2s ease-in;
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li a #icon, 
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li a #icon{
+    width: 20px;
+    height: 20px;
+    color: #a5a4a4;
+    z-index: 1;
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li a span, 
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li a span{
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar.active .sidebar-elements .sidebar-top .sidebar-list li a span, 
+.sidebar.active .sidebar-elements .sidebar-footer .sidebar-list li a span{
+    display: none;
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li a,
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li a{
+    color: #050505;
+    text-decoration: none;
+    cursor: pointer;
+    color: #b5b3b3;
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li:hover, 
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li:hover{
+    border-left: 5px solid #f006ae;
+    
+}
+
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li:hover #icon,
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li:hover #icon,
+.sidebar .sidebar-elements .sidebar-top .sidebar-list li:hover span, 
+.sidebar .sidebar-elements .sidebar-footer .sidebar-list li:hover span{
+    color: #f006ae;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar .sidebar-elements .sidebar-footer{
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    bottom: 0;
+}
+
+
+/* Sidebar swipe button */
+.sidebar .slide-list{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar .slide-list #swipe-btn{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    color: #888885fe;
+    margin-top: 10px;
+}
+
+.sidebar .slide-list #swipe-btn:hover{
+    width: 40px;
+    height: 40px;
+    color: #07d2f6fe;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+
+.sidebar.active .slide-list{
+    position: fixed;
+    width: 30px;
+    height: 40px;
+    margin-left: 50px;
+}
+
+.sidebar.active .slide-list #swipe-btn{
+    rotate: 180deg;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+.main-container .main-content{
+    margin-top: 80px;
+}
+/* CSS for the Footer of page */
+
+.footer{
+    width: 100%;
+    height: 70px;
+    background-color: #1b1919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    top: 100%;
+}
+
+.footer .footer-elements h3{
+    font-family: 'vardana', 'Geneva', 'sans-serif';
+    font-size: 1.5rem;
+    color: #bda2a2;
+}
+
+.footer .footer-elements h3 a{
+    text-decoration: none;
+    color: #dbf60e;
+    font-weight: 700;
+    font-family: 'Vardana', 'Geneva', 'sans-serif';
+}

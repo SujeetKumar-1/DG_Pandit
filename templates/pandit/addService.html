@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Services</title>
+    <link rel="stylesheet" href="/statics/css/pandit/addService.css" />
+</head>
+
+<body>
+    <main class="main">
+        <form method="post" class="form" id="form" target="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="title">
+                <h3>Add Service Now</h3>
+                <h3 id="close-btn" onclick="window.close()">X</h3>
+            </div>
+
+            <section class="section">
+                <div class="service">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Enter Service Name" />
+                </div>
+                <div class="service">
+                    <label for="desc">Description:</label>
+                    <textarea name="desc" id="desc" rows="4" cols="20"
+                        placeholder="Tell more about the service..."></textarea>
+                </div>
+                <div class="service">
+                    <label for="fee">Fee:</label>
+                    <input type="number" name="fee" id="fee" placeholder="Enter in Rupees" />
+                </div>
+                <div class="service">
+                    <label for="picture">Add Image:</label>
+                    <div class="s_pic">
+                        <input type="file" name="picture" id="picture" accept=".jpg" />
+                        <p><span>Note: </span>Add a picture of you service(accept jpeg, jpg and png files only)</p>
+                    </div>
+                </div>
+                <div class="add-btn">
+                    <button type="submit" value="submit" id="add-btn" onclick="formvalidator()">Add</button>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <script>
+        function formvalidator() {
+            var form = document.getElementById('form');
+            var formFields = document.querySelectorAll('input, textarea');
+            var allFieldsFilled = true;
+            var addbtn = document.getElementById('add-btn');
+
+            formFields.forEach(function (field) {
+                if (field.value === '') {
+                    allFieldsFilled = false;
+                }
+            });
+
+            if (allFieldsFilled) {
+                confirm(" Are You Sure!");
+            }
+            else {
+                alert('all fields are Required!');
+            }
+
+            setTimeout(function() {
+                alert('Submission successfully!');
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+.main-content{
+    width: 74.5%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content #ptitle{
+    font-size: 2.5rem;
+    font-family: 'Vardana', 'Geneva', 'sans-serif';
+    color: #f00caf;
+    margin: 20px;
+    padding: 5px;
+}
+
+.main-content hr{
+    width: 100%;
+    border: 1.5px solid #333;
+    margin: 0 0 20px 20px;
+}
+
+.main-content .service-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.service-container .services{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+.services .details{
+    width: 45%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #c3bebe;
+    border-radius: 10px;
+    margin: 0 25px 25px 0;
+}
+
+.services .details img{
+    width: 50%;
+    height: 100%;
+    margin-right: 15px;
+    border: 1px solid #747171;
+    box-shadow: 2px 2px 0 0 #747171;
+    border-radius: 5px 0 0 5px;
+}
+
+.services .details .description{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.services .details .description .desc{
+    width: 100%;
+    height: 70%;
+}
+
+.services .details .description .desc h3{
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+
+.services .details .description .desc p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    color: #404043;
+}
+
+.services .details .description .edit-btn{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services .details .description .edit-btn h5{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    background-color: #0c1bf0;
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.services .details .description .edit-btn h5 span{
+    font-size: .9rem;
+    color: #f3f717;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.services .details .description .edit-btn .update-btn{
+    margin-right: 20px;
+    background-color: #0843f4;
+    box-shadow: 2px 2px 0 0 #f00caf;
+    text-decoration: none;
+    font-size: .9rem;
+    color: #fdfdff;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.services .details .description .edit-btn .update-btn:hover{
+    transform: scale(1.1);
+    background-color: #868484;
+}
+
+.services .addService{
+    width: 20%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.services .addService #add-btn{
+    width: 40px;
+    height: 40px;
+    box-shadow: 3px 3px 0 0#c6c3c3;
+    margin-bottom: 10px;
+    color: #0e0e0e;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.services .addService a{
+    text-decoration: none;
+}
+
+.services .addService a:hover #add-btn{
+    transform: scale(1.2);
+    background-color: #c4bebe;
+    color: rgb(133, 133, 235);
+}
+
+.services .addService h3{
+    color: #747171;
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.services .addService h3:hover{
+    color: #1111f4;
+    transform: scale(1.3);
+    transition: all 0.3s ease-out;
+}

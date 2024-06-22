@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="/statics/css/index.css">
+    <link rel="stylesheet" href="/statics/css/base.css">
+    <link rel="stylesheet" href="/statics/css/people/userDashBoard.css">
+    {% block head %} {% endblock %}
+</head>
+
+<body>
+    <!-- Site Header for desktop view start here-->
+    <header class="site-header">
+        <div class="header-link social">
+            <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+        </div>
+        <div class="moving-element">
+            <p class="moving-text">
+                Digital Pandit, Your Personal Pandit. Talk With Your Pandit...
+            </p>
+        </div>
+        <div class="header-link contact">
+            <ul class="contact-link">
+                <li><ion-icon name="call-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">+91 9195000000</a></li>
+                <li><ion-icon name="mail-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">info@dgpanditji.com</a></li>
+            </ul>
+            <div class="btnn">
+                <p Style="color:white">Logged in: {{user_name}}</p><br>
+                <a href="{% url 'userlogout' %}" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </header>
+    <!-- Site Header for desktop view End here-->
+
+    <!-- Resposive Site Header start here-->
+    <header class="desktop-navbar active">
+        <a href="/home"><img src="/statics/Image/logo.png" class="site-logo" alt="Site Logo" /></a>
+        <navbar class="navbar">
+            <ul class="navmenu">
+                <li><a href="{% url 'userdashboard' %}" class="link-list">Home</a></li>
+                <li class="sub-list"><a href="{% url 'services' %}" class="link-list">Services<i class="fas fa-caret-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#" class="link-list sub">Havan/Yagya</a></li>
+                        <li><a href="#" class="link-list">Festival Pooja</a></li>
+                        <li><a href="#" class="link-list">Puran Katha</a></li>
+                        <li><a href="#" class="link-list">Sanskar Vidhi</a></li>
+                        <li><a href="#" class="link-list">Shanti Pooja</a></li>
+                        <li><a href="#" class="link-list">Sthapan Pooja</a></li>
+                    </ul>
+                </li>
+                <li class="sub-list"><a href="{% url 'popularPuja' %}" class="link-list">Popular Pooja<i class="fas fa-caret-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#" class="link-list sub">Rudrabhishek Pooja</a></li>
+                        <li><a href="#" class="link-list">Ganesh-Lakshmi Pooja</a></li>
+                        <li><a href="#" class="link-list">Satyanarayan Pooja</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'bookPandit' %}" class="link-list">Book PanditJi</a></li>
+                <li><a href="{% url 'destinationWedding' %}" class="link-list">Destination Wedding</a></li>
+                <li><a href="{% url 'contactPage' %}" class="link-list">Contact us</a></li>
+                <div class="user-profile">
+                    <li class="menu-list"><ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+                        <h3>User Profile</h3>
+                        <ul>
+                            <li class="profile-element PL"><a href="#">Manage Profile</a></li>
+                            <li class="profile-element"><a href="#">Booking History</a></li>
+                            <li class="profile-element"><a href="#">Reset Password</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </navbar>
+        <div class="mobile-view-icon">
+            <ion-icon name="menu-outline" class="icon"></ion-icon>
+            <ion-icon name="close-outline" class="icon"></ion-icon>
+        </div>
+    </header>
+    <!-- Responsive Site Header End here-->
+
+    <!-- site header carousel image code start from here -->
+    {% block SlideImg %}
+
+    {% endblock %}
+    <!-- <div class="slildeContainer">
+        <div class="slideimg">
+            <img class="img" src="/statics/Image/bgimg.jpg" />
+        </div>
+        <div class="imgText">
+            <h3>Home Page</h3>
+        </div>
+        </div> -->
+
+    <!-- Site Body Content start here -->
+
+    <!-- <section class="section1">
+        
+    </section> -->
+    <!-- <section class="section2">
+        <h1>Comminf Soon...</h1>
+    </section> -->
+    {% block body %}
+
+    {% endblock %}
+
+
+
+    {% block extra %}
+    
+    {% endblock %}
+    <!-- Start Footer of the Site -->
+    <footer class="footer">
+        <div class="site-footer">
+            <div class="footer-link">
+                <h1>Quick Link</h1>
+                <ul class="footer-menu">
+                    <li class="menu-link"><a href="#">Contact Us</a></li>
+                    <li class="menu-link"><a href="#">Career</a></li>
+                    <li class="menu-link"><a href="#">Term/condition</a></li>
+                    <li class="menu-link"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h1>Social Link</h1>
+                <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+            </div>
+            <div class="move-top">
+                <ion-icon name="arrow-up-outline" class="top-btn"></ion-icon>
+            </div>
+        </div>
+        <div class="copyright">
+            <h3>@ Copyright 2023 | All Right Reserved <span>❤</span><strong> Digital Pandit</strong></h3>
+        </div>
+    </footer>
+
+    <!-- JavaScript Start Here -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/statics/jsscript/index.js"></script>
+</body>
+
+</html>

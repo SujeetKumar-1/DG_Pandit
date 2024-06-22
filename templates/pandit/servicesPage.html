@@ -1,0 +1,49 @@
+{% extends 'pandit/baseDash.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="/statics/css/pandit/services.css">
+
+{% endblock %}
+
+{% block content %}
+
+<h1 id="ptitle">SERVICES</h1><hr>
+<section class="service-container">    
+    <div class="services">
+        {% for service in allservices %}
+        <div class="details">
+            <img src="{{ service.service_img.url }}" alt="{{ service.title }}" />
+            <div class="description">
+                <div class="desc">
+                    <h3>{{ service.title }} </h3>
+                    <p>{{ service.description }}</p>
+                </div>
+                <div class="edit-btn">
+                    <h5>Charge: <span>{{ service.fee }}</span></h5>
+                    <h5 class="update-btn" onclick="return popup('updateService'+{{service.id}})">Update</h5>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+        <div class="addService">
+            <a href="{%url 'addService' %}" class="addservicePopup" onclick="return popup('addService')"><ion-icon name="add-outline" id="add-btn"></ion-icon></a>
+            <a href="{%url 'addService' %}" class="addservicePopup" onclick="return popup('addService')"><h3>Add New</h3></a>
+        </div>
+       
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra %}
+<script type="text/javascript">
+    function popup(url){
+        newwindow = window.open(url, 'addService', "height=400, widht=400");
+        if (window.focus) {newwindow.focus()}
+        return false;
+    }
+
+</script>
+{% endblock %}

@@ -1,0 +1,215 @@
+{% extends 'pandit/baseDash.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="/statics/css/pandit/profile.css">
+
+{% endblock %}
+
+{% block content %}
+
+<h1 id="ptitle">PROFILE</h1><hr>
+
+<section class="wrapper-container">
+    <dic class="form-container">
+        <form class="form" id="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for user in userData %}
+            <div class="form-head">
+                <h3>Personal Details</h3>
+            </div>
+            <div class="personal">
+                <div class="row">
+                    <div class="col-01">
+                        <label for="name">Full Name : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" id="inp" name="fname" value="{{crnt_user.name}}" disabled/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-01">
+                        <label for="name">Public Name : </label>
+
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="pname" value="{{user.pname}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="gender">Gender : </label>
+                    </div>
+                    <div class="col-02">
+                        <div class="gen-opt">
+                            <input type="radio" id="red" name="gender" value="Male" {% if user.gender != 'Female' and  user.gender != 'Other' %}checked{% endif %}><label for="male">Male</label>
+                            <input type="radio" id="red" name="gender" value="Female" {% if user.gender != 'Male' and  user.gender != 'Other' %}checked{% endif %}><label for="female">Female</label>
+                            <input type="radio" id="red" name="gender" value="Other" {% if user.gender != 'Male' and  user.gender != 'Female' %}checked{% endif %}><label for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="education">Highest Qualification : </label>
+                    </div>
+                    <div class="col-02">
+                        <div class="edu-opt">
+                            <input type="radio" id="red" name="education" value="10th" {% if user.high_edu != '12th' and  user.high_edu != 'graduation' %}checked{% endif %} ><label for="hsc">10th </label>
+                            <input type="radio" id="red" name="education" value="12th" {% if user.high_edu != '10th' and  user.high_edu != 'graduation' %}checked{% endif %}><label for="ssc">12th</label>
+                            <input type="radio" id="red" name="education" value="graduation" {% if user.high_edu != '10th' and  user.high_edu != '12th' %}checked{% endif %}><label for="grad">Graduation</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="docs">Supporting Document : </label>
+                    </div>
+                    <div class="col-02 photos">
+                        <input type="file" accept="image/*" name="docs" id="docs" value="{{user.supp_docs}}" required/>
+                        {% if user.supp_docs %}
+                        <a href="{{user.supp_docs.url}}" >"Your Document</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="photo">Photo : </label>
+                    </div>
+                    <div class="col-02 photos">
+                        <input type="file" accept="image/*" name="photo" id="photo" value="{[user.photo]}" required/>
+                        {% if user.photo %}
+                        <a href="{{user.photo.url}}">Your Photo</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-head">
+                <h3>Address/Contact Details</h3>
+            </div>
+
+            <div class="contact">
+                <div class="row">
+                    <div class="col-01">
+                        <label for="email">Email Address : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="email" name="email" value="{{crnt_user.email}}" disabled/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="phone">Phone No. : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="number" id="inp" name="phone" value="{{user.phone}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="wphone">Whatsapp No. : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="number" name="wphone" value="{{user.whatsapp}}" />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-01">
+                        <label for="country">Country : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="country" value="{{user.country}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="state">State : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="state" value="{{user.state}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="city">City/Town/Village : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="city" value="{{user.city}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="pincode">Area Pincode : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="number" name="pincode" value="{{user.pincode}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="address">Full Address : </label>
+                    </div>
+                    <div class="col-02">
+                        <textarea name="address">{{user.faddress}}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-head">
+                <h3>Work Experience</h3>
+            </div>
+
+            <div class="work-exp">
+                <div class="row">
+                    <div class="col-01">
+                        <label for="role">Position/Role : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="role" value="{{user.role}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="exp">Year of Experience : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="number" id="inp" name="exp" value="{{user.experience}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="lang">Languages : </label>
+                    </div>
+                    <div class="col-02">
+                        <input type="text" name="lang" value="{{user.lang}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-01">
+                        <label for="skill">Skills : </label>
+                    </div>
+                    <div class="col-02">
+                        <textarea name="skill">{{user.skill}}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-btn">
+                <button type="submit" value="submit">Save</button>
+            </div>
+            {% endfor %}
+        </form>
+    </dic>
+</section>
+
+
+
+{% endblock %}
+
+{% block extra %}
+<script type="text/javascript">
+   
+</script>
+{% endblock %}

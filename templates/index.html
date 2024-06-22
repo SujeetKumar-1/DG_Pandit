@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Digital Pandit Ji Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="/statics/css/index.css">
+</head>
+
+<body>
+    <!-- Site Header for desktop view start here-->
+    <header class="site-header">
+        <div class="header-link social">
+            <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+        </div>
+        <div class="moving-element">
+            <p class="moving-text">
+                Digital Pandit, Your Personal Pandit. Talk With Your Pandit...
+            </p>
+        </div>
+        <div class="header-link contact">
+            <ul class="contact-link">
+                <li><ion-icon name="call-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">+91 9195000000</a></li>
+                <li><ion-icon name="mail-outline" class="phone-logo"></ion-icon></li>
+                <li class="phone-email"><a href="#">info@dgpanditji.com</a></li>
+            </ul>
+            <a href="{% url 'userSignup' %}" class="login-btn" id="loginpage">Login</a>
+        </div>
+    </header>
+    <!-- Site Header for desktop view End here-->
+
+    <!-- Resposive Site Header start here-->
+    <header class="desktop-navbar active">
+        <a href="/"><img src="/statics/Image/logo.png" class="site-logo" alt="Site Logo" /></a>
+        <navbar class="navbar">
+            <ul class="navmenu">
+                <li><a href="/" class="link-list">Home</a></li>
+                <li class="sub-list"><a href="{% url 'services' %}" class="link-list">Services<i
+                            class="fas fa-caret-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#" class="link-list sub">Havan/Yagya</a></li>
+                        <li><a href="#" class="link-list">Festival Pooja</a></li>
+                        <li><a href="#" class="link-list">Puran Katha</a></li>
+                        <li><a href="#" class="link-list">Sanskar Vidhi</a></li>
+                        <li><a href="#" class="link-list">Shanti Pooja</a></li>
+                        <li><a href="#" class="link-list">Sthapan Pooja</a></li>
+                    </ul>
+                </li>
+                <li class="sub-list"><a href="{% url 'popularPuja' %}" class="link-list">Popular Pooja<i
+                            class="fas fa-caret-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#" class="link-list sub">Rudrabhishek Pooja</a></li>
+                        <li><a href="#" class="link-list">Ganesh-Lakshmi Pooja</a></li>
+                        <li><a href="#" class="link-list">Satyanarayan Pooja</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'bookPandit' %}" class="link-list">Book PanditJi</a></li>
+                <li><a href="{% url 'destinationWedding' %}" class="link-list">Destination Wedding</a></li>
+                <li><a href="#" class="link-list">Contact us</a></li>
+            </ul>
+        </navbar>
+
+        <div class="mobile-view-icon">
+            <ion-icon name="menu-outline" class="icon"></ion-icon>
+            <ion-icon name="close-outline" class="icon"></ion-icon>
+        </div>
+    </header>
+    <!-- Responsive Site Header End here-->
+
+    <!-- site header carousel image code start from here -->
+    <section class="carousel-container">
+        <div class="carousel">
+        </div>
+    </section>
+
+    <!-- Site landing page content start here... -->
+
+    <div id="main" class="site-content">
+        <section class="elementor-process-container">
+            <div class="elementor-image">
+                <img src="/statics/Image/tilak-icon.png" alt="logo" title="Om Namaha Shivay">
+                <h2>Booking a Pandit on Digital PanditJI Platform Easy and Fast Process</h2>
+            </div>
+            <div class="process-container">
+                <div class="process-steps">
+                    <div class="process-elements">
+                        <img src="/statics/Image/process-1.png" class="P-image" />
+                        <h1>Fill The Booking Form</h1>
+                        <p>Fill in the necessary details in the form and submit it.</p>
+                    </div>
+                    <div class="P-arrow">
+                        <img src="/statics/Image/process-arrow.png" alt="Process Arrow" />
+                    </div>
+
+                    <div class="process-elements">
+                        <img src="/statics/Image/process-2.png" class="P-image" />
+                        <h1>Review The Form</h1>
+                        <p>Our executives will review your form and take the necessary actions.</p>
+                    </div>
+                    <div class="P-arrow">
+                        <img src="/statics/Image/process-arrow.png" alt="Process Arrow" />
+                    </div>
+
+                    <div class="process-elements">
+                        <img src="/statics/Image/process-3.png" class="P-image" />
+                        <h1>Confirmation</h1>
+                        <p>You will receive an email confirmation of Pandit Ji's booking within a few seconds.</p>
+                    </div>
+                    <div class="P-arrow">
+                        <img src="/statics/Image/process-arrow.png" alt="Process Arrow" />
+                    </div>
+
+                    <div class="process-elements">
+                        <img src="/statics/Image/process-4.png" class="P-image" />
+                        <h1>Relax</h1>
+                        <p>Simply relax, and the Pandit Ji will visit your home or join you online for the pooja.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="elementor-container about-us">
+            <div class="about-element">
+                <h1>Digital PanditJi</h1>
+                <p>Panditji Online is the most trusted platform for availing Vedic and Hindu Puja Services like
+                    performing Vedic Rituals,
+                    Religious Ceremonies, Vastu Yagya and many more. We provide the best experienced and well-known
+                    purohits and pandits at
+                    your place to do puja. We are leading Pandit Booking website. Now, you can perform your pooja with
+                    our Professional Purohits & Pandits.
+                </p>
+                <p>Our pandits perform rituals like Havan, Yagya, Shanti Vidhi, Shubh Vivah, Wedding Ceremony,
+                    Satyanarayan Katha, Griha Pravesh, Namkaran
+                    Sanskar, Nava Graha Shanti, Engagement, Festival Puja, Janeu, Ganesh Puja, Ram Katha, Mundan
+                    Sanskar, Shrimant Puja, Namkaran, Bhagwat Katha, Vastu Shanti, etc.
+                </p>
+                
+                <p>We provide highly qualified and experienced Panditji for all communities like Gujarati, Rajasthani,
+                    Marathi, Sindhi, Bihari, Bengali, and Panjabi.</p>
+
+                <p>Book Pandit Online For Any Puja at Your Place In Just One Call - <span>+91 96000 00000, +91 70910
+                        00000</span></p>
+                <a href="#" class="lrn-more">LEARN MORE <ion-icon name="arrow-forward-outline"
+                        class="lrn-more-btn"></ion-icon></a>
+            </div>
+            <div class="about-image">
+                <img src="/statics/Image/h-about-us.png.webp" class="img" alt="Puja Services" />
+            </div>
+        </section>
+
+        <section class="all-services-container">
+            <div class="service-bgimage">
+                <img src="/statics/Image/bgimg.jpg" alt="background image">
+            </div>
+            <div class="service-container">
+                <h1>OUR SERVICES</h1>
+                <p>We Provide a Range of Pooja Services</p>
+                <div class="services">
+                    <div class="service-details">
+                        {% for service in allservices %}
+                        <div class="puja-details">
+                            <img class="puja-img" src="{{service.service_img.url}}" alt="puja" />
+                            <div class="puja-desc">
+
+                                <h3>{{service.title}}</h3>
+                                <p>{{service.description}} {{service}}</p>
+            
+                                <h4>Price: <span>{{service.fee}}</span></h4>
+                                <a href="{% url 'bookPandit' %}" class="book-btn">BOOK NOW</a>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="service-details">
+                        {% for service in allservices1 %}
+                        <div class="puja-details">
+                            <img class="puja-img" src="{{service.service_img.url}}" alt="puja" />
+                            <div class="puja-desc">
+
+                                <h3>{{service.title}}</h3>
+                                <p>{{service.description}}</p>
+                                </p>
+                                <h4>Price: <span>{{service.fee}}</span></h4>
+                                <a href="{% url 'bookPandit' %}" class="book-btn">BOOK NOW</a>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="Allservice-btn">
+                        <a href="{% url 'services' %}" class="all-btn">ALL SERVICES<ion-icon
+                                name="arrow-forward-outline" class="left-btn"></ion-icon></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="popular-puja-container">
+            <h1 class="title">Popular Puja</h1>
+            <h4>Most Common Puja That Perform on all Occasion</h4>
+            <div class="popular-puja">
+                <button class="pre-btn" title="Previous Btn">
+                    <ion-icon name="chevron-back-outline" class="pre"></ion-icon>
+                </button>
+                <div class="card-container">
+                    {% for pooja in allservices %}
+                    <div class="card">
+                        <img src="{{pooja.service_img.url}}" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">{{pooja.title}}</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    {% endfor%}
+                    <div class="card">
+                        <img src="/statics/Image/slide2.jpg" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/statics/Image/slide3.jpeg" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/statics/Image/slide1.jpeg" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/statics/Image/slide2.jpg" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/statics/Image/slide3.jpeg" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/statics/Image/ganesh.png" class="card-img" alt="ganesh ji">
+                        <div class="card-body">
+                            <h2 class="Ptitle">Ganesh Puja</h2>
+                            <h6 class="Pdesc">Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet.</h6>
+                            <button class="book-btn"><a href="{% url 'bookPandit' %}">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" title="Next Btn">
+                    <ion-icon name="chevron-forward-outline" class="next"></ion-icon>
+                </button>
+            </div>
+        </section>
+
+        <section class="popular-pandit-container">
+            <h1>Popular Pandit</h1>
+            <p>Most popular panditJi | First Choice of Everone | Book Now</p>
+
+            <div class="pandit-list">
+                {% for pandit in panditData %}
+                <div class="pandit-pro">
+                    <div class="pro-img">
+                        <img src="{{pandit.photo.url}}">
+                    </div>
+                    <div class="pandit-detials">
+                        <h3>Name: <span>{{pandit.pname}}</span></h3>
+                        <h3>Experience: <span>{{pandit.experience}}</span></h3>
+                        <h3>Education: <span>{{pandit.high_edu}}</span></h3>
+                        <h3>Service: <span>{{pandit.skill|slice:"0:73"}}</spam>
+                        </h3>
+                        <h3>Language: <span>{{pandit.lang}}</span></h3>
+                        <h2><a href="{% url 'bookPandit' %}">Book Now</a></h2>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="pandit-pro">
+                    <div class="pro-img">
+                        <img src="/statics/Image/profile.png">
+                    </div>
+                    <div class="pandit-detials">
+                        <h3>Name: <span>Pt. Shivnath</span></h3>
+                        <h3>Experience: <span>2</span></h3>
+                        <h3>Education: <span>Graduate</span></h3>
+                        <h3>Service: <span>Satya Narayan Puja, Rudrabhishesk, Shanti Puja, Bhumipujan</spam>
+                        </h3>
+                        <h3>Language: <span>Hindi,Enlgish</span></h3>
+                        <h2><a href="{% url 'bookPandit' %}">Book Now</a></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Start Footer of the Site -->
+    <footer class="footer">
+        <div class="site-footer">
+            <div class="footer-link">
+                <h1>Quick Link</h1>
+                <ul class="footer-menu">
+                    <li class="menu-link"><a href="#">Contact Us</a></li>
+                    <li class="menu-link"><a href="#">Career</a></li>
+                    <li class="menu-link"><a href="#">Term/condition</a></li>
+                    <li class="menu-link"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h1>Social Link</h1>
+                <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-linkedin" class="social-logo"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+            </div>
+            <div class="RfB">
+                <div class="move-top">
+                    <ion-icon name="arrow-up-outline" class="top-btn"></ion-icon>
+                </div>
+                <div class="pandit-btn">
+                    <h2 class="ti"><a href="{% url 'panditLogin' %}">Be A Pandit</a></h2>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <h3>@ Copyright 2023 | All Right Reserved <span>❤</span><strong> Digital Pandit</strong></h3>
+        </div>
+    </footer>
+    <!-- JavaScript Start Here -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/statics/jsscript/index.js"></script>
+</body>
+
+</html>

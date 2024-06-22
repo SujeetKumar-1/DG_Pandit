@@ -1,0 +1,1746 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+@font-face {
+    font-family: 'Pacifico', cursive;
+    src: url('https://fonts.gstatic.com/s/pacifico/v17/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
+}
+
+.site-header{
+    padding: 0 4.2rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c04f5;
+    gap: 4rem;
+}
+
+.header-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    gap: 2.5rem;
+}
+
+.site-header a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.site-header a:hover{
+    color: rgb(234, 32, 32);
+    font-weight: bold;
+}
+
+.social-logo, .phone-logo{
+    height: 1.5rem;
+    width: 1.5rem;
+    color: rgb(240, 241, 243);
+    border: none;
+}
+
+.social-logo:hover, .phone-logo:hover{
+    transform: scale(1.3);
+}
+.moving-element{
+    display: block;
+    position: relative;
+    height: 3rem;
+    width: 66rem;
+}
+
+.moving-text{
+    line-height: 3rem;
+    margin-left: 35%;
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    -moz-transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
+    -moz-animation: scroll-left 5s linear infinite;
+    -webkit-animation: scroll-left 5s linear infinite;
+    animation: scroll-left 5s linear infinite;
+}
+
+@-moz-keyframes scroll-left{
+    0% {
+        -moz-transform: translateX(30%);
+    }
+    30%{
+        -moz-transform: translateX(-30%);
+    }
+}
+
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(30%); }
+ 30% { -moz-transform: translateX(-30%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(30%); }
+ 30% { -webkit-transform: translateX(-30%); }
+}
+@keyframes scroll-left {
+ 0% { 
+ -moz-transform: translateX(30%); /* Browser bug fix */
+ -webkit-transform: translateX(30%); /* Browser bug fix */
+ transform: translateX(30%); 		
+ }
+ 30% { 
+ -moz-transform: translateX(-60%); /* Browser bug fix */
+ -webkit-transform: translateX(-50%); /* Browser bug fix */
+ transform: translateX(-60%); 
+ }
+}
+
+.contact-link{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.contact-link .phone-email{
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+@media(max-width:60em){
+    .site-header{
+        display: none;
+    }
+}
+
+.header-link .login-btn{
+    width: 60px;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #2702cb;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #f50b90;
+    color: #f0eaea;
+}
+
+.header-link .login-btn:hover{
+    background-color: #ed0909;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* SITE NAVABR CSS START HERE... */
+.desktop-navbar{
+    padding: 0 4.8rem;
+    height: 8.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.desktop-navbar .site-logo{
+    height: 6rem;
+}
+
+.desktop-navbar .searchform{
+    width: 25rem;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -150px;
+    border-radius: 20px;
+}
+
+.searchform #location{
+    width: 60px;
+    height: 90%;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0.5px 0 1px #555353;
+    outline: none;
+    padding: 0 5px;
+}
+
+.searchform .searchBox{
+    width: 25rem;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0.5px 0 1px #555353;
+}
+
+.searchBox .srcBox{
+    width: 80%;
+    height: 30px;
+    border: none;
+    background: transparent;
+    padding: 5px 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition:all 0.5s ease-in;
+
+}
+
+.searchBox .srcBox:focus{
+    outline: none;
+}
+
+.searchBox button{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+}
+
+.searchBox #srcIcon{
+    width: 30px;
+    height: 30px;
+    color: #0909d7;
+}
+
+.navmenu{
+    display: flex;
+    list-style-type: none;
+    z-index: 100;
+    gap: 1.5rem;
+}
+
+.link-list:link,
+.link-list:visited{
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444141;
+    padding: 8px;
+    transition: all 0.1s linear;
+}
+
+.link-list:hover,
+.link-list:active{
+    color: #0dc2da;
+    border-radius: 5px;
+    border: 2px solid #c4a8b4;
+    
+}
+
+.fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+}
+
+.nav-submenu{
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    z-index: 1000;
+}
+
+.sub-list:hover .nav-submenu{
+    display: block;
+    position: absolute;
+}
+
+.sub-list:hover .nav-submenu .link-list{
+    float: none;
+}
+
+.nav-submenu{
+    width: 22rem;
+    background-color: #fdfdfd;
+}
+
+.nav-submenu .sub{
+    margin-top: 2rem;
+}
+.nav-submenu .link-list{
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: #e45d97;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.nav-submenu .link-list:hover{
+    color: #0dc2da;
+    border: 2px solid rgb(13, 13, 13);
+}
+
+.mobile-view-icon{
+    display: none;
+    cursor: pointer;
+}
+
+.icon{
+    width: 4rem;
+    height: 4rem;
+    color: #364fc7;
+}
+
+.icon[name="close-outline"]{
+    display: none;
+}
+
+/* Responsive design for mobile view Navbar */
+@media (max-width: 62em){
+    .mobile-view-icon{
+        right: 10px;
+        display: block;
+        z-index: 999;
+        position: fixed;
+    }
+    
+    .desktop-navbar .site-logo{
+        width: 15%;
+        height: auto;
+    }
+
+    .desktop-navbar .searchform {
+        margin-right: 20px;
+    }
+
+    .searchBox .srcBox{
+        width: 15rem;
+        height: 30px;
+        padding: 5px 5px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: 0.5s;
+        outline: none;
+    }
+    
+    .searchBox .srcBox:focus{
+        border: none;
+        outline: none;
+    }
+
+    .navbar{
+        width: 100%;
+        height: 100%;
+        background-color: #f36e6e;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        display: none;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* Start transition for navbar in mobile device*/
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        z-index: 100;
+    }
+
+
+    .active .navbar{
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        position: auto;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .active .navbar .navmenu{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 0 0 20px;
+    }
+
+    .active .mobile-view-icon .icon[name="close-outline"]{
+        display: block;
+        color: #0f0738;
+    }
+    .active .mobile-view-icon .icon[name="menu-outline"]{
+        display: none;
+    }
+}
+
+@media (max-width:35em){
+    .desktop-navbar{
+        padding: 0 2.4rem;
+    }
+
+    .desktop-navbar .site-logo{
+        width: 25%;
+        height: auto;
+    }
+
+    .desktop-navbar .searchform {
+        margin-right: 30px;
+    }
+
+    .searchBox .srcBox{
+        width: 12rem;
+        height: 30px;
+        padding: 5px 5px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: 0.5s;
+    }
+
+    .searchBox .srcBox:focus{
+        border: none;
+        outline: none;
+    }
+    
+}
+
+/* **********************************************
+    Site header image carousel css start here
+*************************************************/
+
+.carousel-container{
+    position: relative;
+    width: 100%;
+    height: 55rem;
+    padding: 2rem, 0;
+    overflow-x: hidden;
+}
+
+.carousel{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slider{
+    flex: 0 0 auto;
+    margin-right: 30px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 70%;
+    min-height: 100%;
+    object-fit: fill;
+    display: block;
+    margin-left: auto;
+}
+
+.slide-content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 200;
+    background: linear-gradient(to right, #e90775 80%, #0c111b00);
+    color: #fff;
+}
+
+.slide-title{
+    padding-left: 50px;
+    font-size: 5rem;
+    font-family: 'Pacifico', cursive;
+    color: #dcf216;
+    text-transform: capitalize;
+    margin-top: 80px;
+}
+
+.slide-desc{
+    padding-left: 50px;
+    line-height: 30px;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+
+@media (max-width:62em){
+    .carousel-container{
+        width: 100%;
+        height: 30rem;
+        z-index: 90;
+        
+    }
+
+    .slide-title{
+        margin-top: 3.5rem;
+        font-size: 3rem;
+        padding-left: 25px;
+    }
+
+    .slide-desc{
+        font-size: 1rem;
+        line-height: 1.8rem;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 3.5rem;
+    }
+}
+
+@media (max-width:35em){
+    .carousel-container{
+        height: 20rem;
+        z-index: 1;
+    }
+    .slide-title{
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        padding-left: 2rem;
+    }
+
+    .slide-desc{
+        font-size: .8rem;
+        margin-top: 1rem;
+        padding-left: 2.5rem;
+        line-height: 1.4rem;
+    }
+}
+
+/* **********************************************
+    Site carousel code end here
+*************************************************/
+
+
+/* **********************************************
+    Site main content css code start here...
+*************************************************/
+.site-content{
+    width: 100%;
+    position: inherit;
+    margin-top: 20px;
+    
+}
+
+
+/* **********************************************
+    Main Site content section 1 Booking process style start here 
+*************************************************/
+.elementor-process-container{
+    width: 100%;
+    height: 60rem;
+    margin-top: 10rem;
+}
+
+.elementor-process-container .elementor-image{
+    width: 100%;
+    height: 20rem;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.elementor-image img{
+    position: relative;
+    display: absolute;
+    left: 38.7%;
+}
+
+.elementor-image img:hover{
+    transform: scale(1.05);
+}
+
+.elementor-image h2{
+    width: 50%;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Calibri';
+    color: #f50a0a;
+    margin: 50px 20% 10px 25%;
+    transition: all 0.3 ease-out;
+}
+
+.elementor-process-container .process-container{
+    width: 90%;
+    height: 30rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px 0 0 5%;
+   
+}
+
+.process-container .process-steps{
+    width: 100%;
+    display: flex;
+    margin-left: 20px;
+}
+
+.process-steps .process-elements{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.process-steps .process-elements .P-image{
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    margin: 20px 0 0 30%;
+}
+
+.process-elements h1{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Calibri';
+    color: #080808;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.process-elements p{
+    font-size: 1.5rem;
+    font-family: 'Calibri';
+    color: #4c4949;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.process-steps .P-arrow{
+    width: 30%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.P-arrow img{
+    width: 100%;
+    margin: 0 0 -230% 0;
+}
+
+@media(max-width:62em){
+    .elementor-image img{
+        left: 27%;
+    }
+
+    .elementor-image h2{
+        color: #f808a4;
+    }
+
+    .elementor-process-container .process-container{
+        margin: 10px 0 5% 3%;
+    }
+
+
+    .process-steps .process-elements .P-image{
+        width: 6rem;
+        height: 6rem;
+        margin: 20px 0 0 20%;
+    }
+
+    .process-steps .process-elements h1{
+        font-size: 1.5rem;
+    }
+
+    .process-steps .process-elements p{
+        font-size: 1rem;
+    }
+
+    .process-steps .P-arrow{
+        margin-left: 0;
+    }
+
+    .P-arrow img{
+        margin: 130px 0 0 0;
+    }
+}
+
+@media (max-width:35em){
+
+    .elementor-process-container{
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+    .elementor-image img{
+        width: 20rem;
+        height: auto;
+        left: 22%;
+    }
+
+    .elementor-image h2{
+        width: 90%;
+        margin: 20px 0 0 20px;
+        font-size: 1.5rem;
+    }
+
+    .elementor-process-container .process-container{
+        width: 90%;
+        height: 99rem;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -50px;
+        
+    }
+
+    .process-container .process-steps{
+        display: block;
+        flex-direction: column;
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+
+    .process-steps .process-elements .P-image{
+        width: 100px;
+        height: 100px;
+        margin: 0 0 0 30%;
+    }
+
+    .process-steps .process-elements h1{
+        font-size: 1.5rem;
+    }
+
+    .process-steps .process-elements p{
+        font-size: 1.3rem;
+        width: 90%;
+        text-align: center;
+        margin: 5%;
+    }
+
+    .process-steps .P-arrow{
+        display: none;
+    }
+
+
+}
+
+/* **********************************************
+    Main Site content section 2 style start here 
+*************************************************/
+.elementor-container{
+    width: 100%;
+    height: 75rem;
+    padding: 0.6rem;
+    background-color: #a5d8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us{
+    background-color: #dee2e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease;
+    padding: 20px;
+    transition:all  1s ease-in;
+    border-radius: 10px;
+}
+
+.about-us .about-element{
+    margin-left: 50px;
+    text-decoration: none;
+    width: 50%;
+    height: 100%;
+}
+
+.about-element h1{
+    font-size: 4rem;
+    font-family: 'Times New Roman', sans-serif;
+    color: #f00c0c;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.about-element p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    color: #1b1919;
+    line-height: 1.3;
+    margin-top: 20px;
+}
+
+.about-element p span{
+    color: #eb0e0e;
+}
+
+.about-element .lrn-more{
+    width: 18rem;
+    height: 4.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #f10707;
+    border: 2px solid #f00f13;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.about-element .lrn-more .lrn-more-btn{
+    width: 3rem;
+    height: 2rem;
+    margin-left: 5px;
+}
+
+.about-element .lrn-more:hover{
+    background-color: #fc0a0a;
+    color: #fff;
+}
+.about-element .about-image{
+    width: 50%;
+    height: 100%;
+    margin-right: 50px;
+}
+
+.about-image .img{
+    width: 80%;
+    height: 80%;
+    margin-left: 50px;
+}
+
+@media (max-width: 62em){
+    .elementor-container{
+        width: 100%;
+        height: 110rem;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-us .about-element{
+        width: 100%;
+        height: auto;
+        margin-left: 10px;
+    }
+
+    .about-element h1{
+        font-size: 2.5rem;
+    }
+
+    .about-element .about-element p{
+        font-size: 1.5rem;
+    }
+
+    .about-image{
+        width: 100%;
+        margin: 20px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 35em){
+    .elementor-container{
+        height: 80rem;
+    }
+    .about-element h1{
+        font-size: 2rem;
+    }
+    .about-element p{
+        font-size: 1rem;
+    }
+    .about-image{
+        margin: 50px 0 0 0;
+    }
+
+    .about-element .lrn-more{
+        margin-top: 30px;
+    }
+}
+
+/* **********************************************
+    Main Site conent section 3 style start here 
+*************************************************/
+
+.all-services-container{
+    width: 100%;
+    height: 90rem;
+    display: flex;
+}
+
+.all-services-container .service-bgimage{
+    width: 100%;
+    height: 85vh;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.all-services-container .service-bgimage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.all-services-container .service-container{
+    width: 100%;
+    height: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.service-container h1{
+    font-size: 5rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Calibri';
+    color: #f80808;
+    margin: 3% 0 10px 0;
+}
+
+.service-container p{
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Calibri';
+    font-weight: 600;
+    color: #fbf6f6;
+    margin: 0 0 1% 0;
+}
+
+.service-container .services{
+    width: 90%;
+    position: relative;
+    height: 100%;
+    padding: 10px;
+    margin: 10px 50px 10px 100px;
+}
+
+.services .service-details{
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.service-details .puja-details{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.service-details .puja-details .puja-img{
+    width: 50%;
+    height: 100%;
+    border-radius: 9px 0 0 9px;
+    transition: all 0.3s ease;
+    
+}
+
+.service-details .puja-details .puja-img:hover{
+    transform: scale(1.07);
+}
+
+.service-details .puja-desc{
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 0 9px 9px 0;
+}
+
+.service-details .puja-desc h3{
+    font-size: 2rem;
+    margin: 25px 0 0 20px;
+    color: #f90909;
+    font-family: 'Calibri';
+}
+
+.service-details .puja-desc p{
+    color: #000;
+    font-size: 1.5rem;
+    text-align: left;
+    justify-content: center;
+    margin: 15px 15px 0 25px;
+    font-family: 'Calibri';
+}
+
+.service-details .puja-desc h4{
+    font-size: 1.6rem;
+    margin: 20px 15px 0 25px;
+    font-family: 'Calibri';
+    margin-bottom: 30px;
+}
+
+.service-details .puja-desc h4 span{
+    color: #f90808;
+    font-size: 1.4rem;
+}
+
+.service-details .puja-desc .book-btn{
+    width: 12rem;
+    height: 35px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f40808;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    border: 2px solid #f40909;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-details .puja-desc .book-btn:hover{
+    color: #fff;
+    background-color: #eb0808;
+    transition: all 0.5s ease;
+    transform: scale(1.05);
+}
+
+.services .Allservice-btn{
+    width: 85%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem 0 0 3rem;
+}
+.services .Allservice-btn .all-btn{
+    width: 20rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-family: 'Calibri';
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    border: 1px solid  #fa0909;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #f50d0d;
+    transition: all 0.3s ease;
+}
+
+.services .Allservice-btn .all-btn .left-btn{
+    margin-left: 10px;
+    align-items: flex-end;
+}
+
+.services .Allservice-btn .all-btn:hover{
+    color: #fff;
+    background-color: #f80606;
+    transform: scale(1.05);
+}
+
+@media (max-width:62em){
+
+    .all-services-container{
+        width: 100%;
+        height: 150rem;
+        background-color: #fbf6f9;
+        display: flex;
+    }
+
+    .service-container .services{
+        width: 100%;
+        height: auto;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0 25px 0 25px;
+    }
+
+    .services .service-details{
+        width: 90%;
+        height: 30rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .service-details .puja-details{
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .service-details .puja-details .puja-img{
+        width: 50%;
+        height: 100%;
+    }
+    
+    .service-details .puja-desc{
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media (max-width:35em){
+    .all-services-container{
+        height: 87rem;
+    }
+    .all-services-container .service-bgimage img{
+        width: 100%;
+        height: 55vh;
+        border-radius: 8px;
+    }
+    
+    .service-container h1{
+        font-size: 3rem;
+        margin-top: 3.5rem;
+    }
+
+    .service-container p{
+        font-size: 2rem;
+    }
+    
+    .service-container .services{
+        width: 100%;
+        height: auto;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .services .service-details{
+        width: 90%;
+        height: 15rem;
+        position: relative;
+        display: inline-block;
+        margin: 0 10px 0 20px;
+    }
+
+    .service-details .puja-details{
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .service-details .puja-details .puja-img{
+        width: 50%;
+        height: 100%;
+    }
+    
+    .puja-details .puja-desc{
+        width: 50%;
+        height: 100%;
+    }
+
+    .puja-details .puja-desc h3{
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    .puja-details .puja-desc p{
+        font-size: 0.8rem;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .puja-details .puja-desc h4{
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .puja-details .puja-desc h4 span{
+        font-size: 1rem;
+    }
+
+    .service-details .puja-desc .book-btn{
+        width: 9rem;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .services .Allservice-btn{
+        margin: 3rem 0 0 2rem;
+    }
+    .services .Allservice-btn .all-btn{
+        width: 13.2rem;
+        height: 4rem;
+        font-size: 1.3rem;
+        margin-left: 50px;
+    }
+}
+
+/* **********************************************
+    Main Site content section 4 Popular Puja style start here 
+*************************************************/
+.popular-puja-container{
+    width: 100%;
+    height: 55rem;
+    margin: 0 0 0 0s;
+}
+
+.popular-puja-container .title{
+    color: #f00d0d;
+    opacity: 0.9;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Calibri';
+    padding: 4% 0 0 0;
+    margin: 0 0 0 30px ;
+}
+
+.popular-puja-container h4{
+    font-family: 'Calibri';
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+    color: #f50b90;
+    line-height: 1.2;
+    margin: 10px 0 35px 40px ;
+}
+
+.popular-puja{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.card-container{
+    position: relative;
+    width: 95%;
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    height: 95%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 12px;
+    transition: 0.5s;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: scale(1.07);
+}
+
+.card:hover .card-body{
+    opacity: 1;
+}
+
+.card-body{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(12, 13, 8, 0), #fb68b9 95%);
+    padding: 10px;
+    transition: .5s;
+}
+
+.card-body .Ptitle{
+    color: #f4e916;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-top: 60%;
+}
+
+.card-body .Pdesc{
+    color: rgb(237, 225, 4);
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.card-body .book-btn{
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 600;
+    text-align: right;
+    color: #dbd3eb;
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px; 
+}
+
+.card-body .book-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    background-size: cover;
+    transform: scale(0.4);
+}
+
+.card-body .book-btn:hover{
+    color: #f60b2e;
+    background: rgba(255,255,255,0.5);
+}
+
+.popular-puja .pre-btn, .popular-puja
+.next-btn{
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.popular-puja .pre-btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.popular-puja .pre-btn{
+    left: 0;
+    margin-left: 0;
+    background: linear-gradient(to right, #ef6666 0%, #cf565600);
+}
+
+.popular-puja .next-btn{
+    right: 0;
+    margin-right: 0;
+    background: linear-gradient(to left, #ef6666 0%, #cf565600);
+}
+
+.pre-btn .pre, 
+.next-btn .next{
+    width:40px;
+    height: 40px;
+    opacity: 1;
+}
+
+.pre-btn:hover .pre,
+.next-btn:hover .next{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width:35em){
+    .popular-puja-container .title{
+        font-size: 2.5rem;
+        margin: 3rem 0 0 -10px;
+
+    }
+    
+    .popular-puja-container h4{
+        font-size: 1.5rem;
+        width: 90%;
+        margin: 10px 0 20px 10px;
+    }
+
+    .popular-puja{
+        width: 100%;
+        height: 200px;
+    }
+
+    .card-img{
+        width: 98%;
+        height: 95%;
+    }
+
+    .card-body{
+        opacity: 0;
+        width: 98%;
+        height: 95%;
+    }
+
+   .card .card-body .Ptitle{
+        margin-top: 25%;
+        font-size: 1.5rem;
+        color: #fafe07;
+   }
+
+   .card .card-body p{
+    font-size: 1.2rem;
+    color: #fafe07;
+   }
+}
+
+/* **********************************************
+    Main Site content section 5 Popular Puja style start here 
+*************************************************/
+.site-content .popular-pandit-container{
+    width: 100%;
+    height: auto;
+    margin: 0 5px 20px 5px;
+}
+
+.popular-pandit-container h1{
+    color: #f00d0d;
+    opacity: 0.9;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Calibri';
+    padding: 4% 0 0 0;
+    margin: 0 0 0 30px ;
+}
+
+.popular-pandit-container p{
+    font-family: 'Calibri';
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 3rem 0;
+    color: #f50b90;
+    line-height: 1.2;
+    margin: 10px 0 35px 40px ;
+}
+
+.popular-pandit-container .pandit-list{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pandit-list .pandit-pro{
+    height: 95%;
+    width: 28%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 15px 0 40px;
+    box-shadow: 3px 3px #f57979;
+}
+
+.pandir-pro .pro-img{
+    width: 100%;
+    height: 100%;
+}
+
+.pandit-pro .pro-img img{
+    width: 20rem;
+    height: 20rem;
+    margin: 20px 5px 0 5px;
+}
+
+.pandit-pro .pandit-detials{
+    width: 20rem;
+    height: 100%;
+    margin: 10px 0 0 5px;
+}
+
+.pandit-detials h3{
+    font-size: 1.6rem;
+    color: #000;
+    margin-top: 15px;
+    font-weight: 550;
+}
+
+.pandit-detials h3 span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0909d7;
+    transition: all .5s ease-in;
+}
+
+.pandit-detials h2{
+    margin-top: 20px;
+}
+
+.pandit-detials h2 a{
+    width: 120px;
+    height: 40px;
+    font-size: 2rem;
+    padding: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.pandit-detials h2 a:hover{
+    transform: scale(1.1);
+    color: #fff;
+    background-color: #e60092;
+}
+/* **********************************************
+    Site footer css style start here 
+*************************************************/
+.footer{
+    width: 100%;
+    height: 20rem;
+    background-color: #0c04f5;
+    text-decoration: none;
+}
+
+.footer .site-footer{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.site-footer .footer-link h1{
+    color: #3bf6f3;
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.site-footer .footer-menu{
+    margin-left: 5px;
+    list-style-type: none;
+    display: block;
+    text-decoration: none;
+}
+
+.footer-menu .menu-link{
+    font-size: 1.5rem;
+    font-family: 'Courier New',sans-serif;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.footer-menu .menu-link a{
+    color: #e7f5ff;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-menu .menu-link a:hover{
+    color: #cb1284;
+    border-bottom: 1px solid #fff;
+}
+
+.footer-social{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social h1{
+    color: #1fe3f9;
+    position: relative;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.footer-social .social-logo{
+    height: 2rem;
+    width: 2rem;
+    margin-left: 5px;
+    color: rgb(231, 233, 237);
+    border: none;
+}
+
+.footer-social .social-logo:hover{
+    color: #f40c0c;
+    height: 2.5rem;
+    width: 2.5rem;
+
+}
+
+.RfB{
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.RfB .move-top{
+    width: 3rem;
+    height: 3rem;
+    margin: 0 2rem 5rem 0;
+}
+
+.move-top .top-btn{
+    width: 4rem;
+    height: 4rem;
+    color: #fad907;
+    border: 2px solid #d7f60c;
+    border-radius: 5px;
+    background-color: #da0d0d;
+    transition: all .3 ease-out;
+    margin-left: 90%;
+}
+
+.move-top .top-btn:hover{
+    background-color: #240a5c;
+    color: #0dc2da;
+    width: 4.2rem;
+    height: 4.2rem;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+.RfB .pandit-btn{
+    width: 100%;
+    height: 100%;
+}
+
+
+.pandit-btn .ti a{
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-family: 'calibri';
+    text-align: center;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin: 0 3rem 0 0;
+    border: 2px solid #f00ed2;
+    cursor: pointer;
+    box-shadow: 0 2px 25px #ea188f;
+    transition: all .6s ease;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow{
+    from {
+      text-shadow: 0 0 10px #f6f605,0 0 20px rgb(230, 0, 0), 0 0 40px #eef606;
+    }
+    to {
+      text-shadow: 0 0 30px #ed148b, 0 0 40px #f50792, 0 0 60px #df1796;
+    }
+  }
+
+.pandit-btn .ti:hover{
+    color: rgb(216, 223, 23);
+    transform: scale(1.1);
+    transition: all 0.3s ease-out;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+
+.copyright{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.copyright h3{
+    font-size: 1.5rem;
+    color: hsl(264, 2%, 48%);
+}
+
+.copyright span{
+    font-size: 1.8rem;
+    color: #e60606;
+}
+
+.copyright strong{
+    color: #ededeb;
+    font-family: monospace;
+    font-size: 2rem;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@media(max-width:35rem){
+    .site-footer .footer-link h1{
+        color: #240a5c;
+        margin-bottom: 2px;
+        font-family: monospace;
+        font-size: 1.2rem;
+    }
+    
+    .footer-menu .menu-link{
+        font-size: .8rem;
+    }
+
+    .footer-social h1{
+        font-size: 1.2rem;
+    }
+
+    .footer-social .social-logo{
+        width: 1.3rem;
+        height: 1.3rem;
+        
+    }
+    
+    .copyright h3{
+        font-size: 1.2rem;
+    }
+    .copyright span{
+        font-size: 1.2rem;
+    }
+
+    .copyright strong{
+        font-size: 1.3rem;
+       line-break: loose;
+    }
+
+}
+
+/* Footer end here....*/

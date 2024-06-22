@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+/* Some part of css style of these page inherite (written in) from index.css style sheet*/
+.navmenu .user-profile{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 50px;
+    z-index: 2000;
+}
+
+.user-profile .profile-icon{
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+}
+
+.user-profile h3{
+    display: none;
+}
+.menu-list ul{
+    display: none;
+}
+
+.menu-list:hover ul{
+    display: block;
+    position: absolute;
+    list-style-type: none;
+    background-color: #fff;
+    height:100px;
+    width: 100px;
+    border-radius: 3px;
+    margin: 0 10px 0 0;
+    z-index: 100;
+}
+
+.user-profile .profile-element{
+    display: block;
+    margin: 10px 2px 2px 5px;
+}
+
+.menu-list .PL{
+    margin-top: 15px;
+}
+.menu-list a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: none;
+    color: rgb(255, 0, 166);
+    padding: 2px;
+}
+
+.menu-list a:hover{
+    border-bottom: 1px solid black;
+    color: rgb(7, 205, 250);
+}

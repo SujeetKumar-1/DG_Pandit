@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-container{
+    width: 600px;
+    height: 600px;
+    background: transparent;
+    margin: 50px 0 0 50px;
+    z-index: 9999;
+}
+
+.popup-container .updateService{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2.5px #bef5f5;
+}
+
+.popup-container .updateService .head-close{
+    width: 100%;
+    height: 50px;
+    background-color: #0843f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.popup-container .updateService .head-close h3{
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 20px 0 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.popup-container .updateService .head-close #close-btn:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    color: #f40505;
+}
+.popup-container.active .updateService .form{
+    width: 100%;
+    height: 100%;
+}
+
+.popup-container .updateService .form .form-container{
+    width: 100%;
+    height: 100%;
+}
+
+.popup-container .updateService .form .form-container .row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 30px 0 10px 20px;
+}
+
+.popup-container .updateService .form .form-container .row .col-01{
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.popup-container .updateService .form .form-container .row .col-02{
+    width: 58%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.popup-container .updateService .form .form-container .row .col-01 label{
+    width: 100%;
+    height: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+
+.popup-container .updateService .form .form-container .row .col-02 input{
+    width: 100%;
+    height: 50px;
+    padding: 5px 5px;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 0.5px solid #333;
+    border-radius: 5px;
+}
+
+.popup-container .updateService .form .form-container .row .col-02 #photo{
+    border: none;
+}
+
+.popup-container .updateService .form .form-container .row .col-02 textarea{
+    width: 100%;
+    height: 100px;
+    padding: 5px 5px;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+}
+
+.popup-container .updateService .form .form-btn{
+    width: 95%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 70px 0 0 15px;
+    background-color: #817f7f4a;
+    border-radius: 10px;
+}
+
+.popup-container .updateService .form .form-btn button{
+    width: 22%;
+    height: 75%;
+    background-color: #036b0ce9;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e8e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.popup-container .updateService .form .form-btn #delete{
+    background-color: #f10717e9;;
+}
+
+.popup-container .updateService .form .form-btn button:hover{
+    transform: scale(1.15);
+    background-color: #a7a6a6;
+}
+
+
